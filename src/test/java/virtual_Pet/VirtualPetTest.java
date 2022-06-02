@@ -1,12 +1,13 @@
 package virtual_Pet;
+ import org.junit.jupiter.api.Assertions;
 
-  // import org.junit.jupiter.api.Assertions
+  import org.junit.jupiter.api.Test;
 
-  //import org.junit.jupiter.api.Test;
+  import static org.junit.jupiter.api.Assertions.assertTrue;
 
-  //import static org.junit.jupiter.api.Assertions.assertTrue;
+import virtual_Pet.VirtualPet;
 
- public class VirtualPetTest {
+public class VirtualPetTest {
 
     @Test
     public void hungerShouldDecreaseWhenFed() {
@@ -24,7 +25,7 @@ package virtual_Pet;
     public void thirstLevelDecreaseWhenFed() {
         VirtualPet underTest = new VirtualPet("testpet", 6, 6, 4);
         underTest.play();
-        Assertions.assertEquals(6, underTest.getThirstLevel());
+        Assertions.assertEquals(4, underTest.getThirstLevel());
     }
     @Test
     public void hungerThirstBoredomShouldIncreaseWithTime() {

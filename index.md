@@ -12,7 +12,7 @@ Create a virtual pet. Maybe we can make this a fad!
 ## Classes
 - [ ] You will need to create a `virtual_Pet.VirtualPet` class.
 - [ ] `VirtualPetApplication` will house the `main` method.  This is the starting point when the application runs.
-- [ ] **Stretch goal** Build out unit tests in the `VirtualPetTest` class to test the behaviors placed in `virtual_Pet.VirtualPet`
+- [ ] **Stretch goal** Build out unit tests in the `virtual_Pet.VirtualPetTest` class to test the behaviors placed in `virtual_Pet.VirtualPet`
 
 ## Details
 
