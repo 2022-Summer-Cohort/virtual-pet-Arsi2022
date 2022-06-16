@@ -11,7 +11,7 @@ public class VirtualPetTest {
 
     @Test
     public void hungerShouldDecreaseWhenFed() {
-        VirtualPet underTest = new VirtualPet("testpet", 6,6, 4);
+        VirtualPet underTest = new RoboticDog("testpet", 6,6, 4,10,10);
         underTest.feed();
         Assertions.assertEquals(6, underTest.getHungerLevel());
     }

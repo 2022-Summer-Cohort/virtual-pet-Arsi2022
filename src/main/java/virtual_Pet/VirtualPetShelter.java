@@ -10,10 +10,10 @@ public class VirtualPetShelter {
 
     public VirtualPetShelter() {
         shelter = new ArrayList<>();
-        shelter.add(new VirtualPet("Henry", 6, 6, 6));
-        shelter.add(new VirtualPet("Alein", 6, 6, 6));
-        shelter.add(new VirtualPet("Brandon", 6, 6, 6));
-        shelter.add(new VirtualPet("Nguyen", 6, 6, 6));
+        shelter.add(new RoboticDog("Henry", 6, 6, 6, 10, 10));
+        shelter.add(new RoboticCat("Alein", 6, 6, 6, 10, 10));
+        shelter.add(new OrganicDog("Brandon", 6, 6, 6, 10));
+        shelter.add(new OrganicCat("Nguyen", 6, 6, 6, 10));
 
     }
 
@@ -35,6 +35,7 @@ public class VirtualPetShelter {
         }
 
     }
+
 
     public void admitPet(VirtualPet Animals) {
         shelter.add(Animals);
@@ -66,5 +67,53 @@ public class VirtualPetShelter {
 
     public VirtualPet getPet(int index) {
         return shelter.get(index);
+    }
+
+    public void CleanCage() {
+        for (VirtualPet pet : shelter) {
+            if (pet instanceof OrganicDog) {
+                ((OrganicDog) pet).CleanCage();
+            }
+        }
+    }
+
+    public void CleanLittleBox() {
+        for (VirtualPet pet : shelter) {
+            if (pet instanceof OrganicDog) {
+                ((OrganicDog) pet).CleanLittleBox();
+            }
+        }
+
+    }
+
+    public void walk() {
+        for (VirtualPet pet : shelter) {
+            if (pet instanceof Walking) {
+                ((Walking) pet).walk();
+            }
+
+
+        }
+
+    }
+
+    public void oilRobots() {
+        for (VirtualPet pet : shelter) {
+            if (pet instanceof RoboticPet) {
+                ((RoboticPet) pet).oilRobots();
+            }
+        }
+
+
+    }
+
+    public void maintainRobot() {
+        for (VirtualPet pet : shelter) {
+            if (pet instanceof RoboticPet) {
+                ((RoboticPet) pet).maintainRobots();
+            }
+        }
+
+
     }
 }

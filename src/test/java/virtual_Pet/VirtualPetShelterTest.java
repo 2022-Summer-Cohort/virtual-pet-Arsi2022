@@ -30,12 +30,18 @@ class VirtualPetShelterTest {
     }
 
 
-        @Test
+    @Test
     public void HungerThirstBoredomLevelShouldIncreaseWithTick() {
-            VirtualPetShelter underTest = new VirtualPetShelter();
-            underTest.playAll();
-            Assertions.assertEquals(6, underTest.getPet(1).getBoredomLevel());
-        }
+        VirtualPetShelter underTest = new VirtualPetShelter();
+        underTest.playAll();
+        Assertions.assertEquals(6, underTest.getPet(1).getBoredomLevel());
+    }
+
 }
+
+
+
+
+
 
 
