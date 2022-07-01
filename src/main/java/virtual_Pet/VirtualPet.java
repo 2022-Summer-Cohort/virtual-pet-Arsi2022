@@ -1,12 +1,14 @@
 package virtual_Pet;
 
-public abstract class  VirtualPet {
+public abstract class VirtualPet {
 
 
-    private String name;
-    private int hungerLevel;
-    private int boredomlevel;
-    private int thirstlevel;
+    private  int thirstlevel;
+    private  int boredomlevel;
+    private  String name;
+    protected int hungerLevel;
+    protected int boredomLevel;
+    protected int thirstLevel;
 
     public VirtualPet(String name, int hungerlevel, int boredomLevel, int thirstLevel) {
         this.name = name;
@@ -37,15 +39,15 @@ public abstract class  VirtualPet {
     }
 
     public void feed() {
-        hungerLevel = 6;
+        hungerLevel --;
     }
 
     public void play() {
-        boredomlevel = 6;
+        boredomlevel --;
     }
 
     public void water() {
-        thirstlevel = 6;
+        thirstlevel --;
     }
 
     public void tick() {
@@ -64,7 +66,10 @@ public abstract class  VirtualPet {
 
     }
 
-}
+    public abstract void greeting();
+
+
+    }
 
 
 

@@ -34,6 +34,6 @@ protected int maintenanceLevel;
     }
 
     public void oilRobots() {
-        oilLevel = 10;
+        oilLevel += 10;
     }
 }

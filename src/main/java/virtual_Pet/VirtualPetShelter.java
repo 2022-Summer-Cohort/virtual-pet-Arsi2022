@@ -6,16 +6,15 @@ import java.util.ArrayList;
 public class VirtualPetShelter {
 
 
+
     private ArrayList<VirtualPet> shelter;
 
     public VirtualPetShelter() {
-        shelter = new ArrayList<>();
-        shelter.add(new RoboticDog("Henry", 6, 6, 6, 10, 10));
-        shelter.add(new RoboticCat("Alein", 6, 6, 6, 10, 10));
-        shelter.add(new OrganicDog("Brandon", 6, 6, 6, 10));
-        shelter.add(new OrganicCat("Nguyen", 6, 6, 6, 10));
-
+        this.shelter= new ArrayList<>();
     }
+
+
+
 
     public void playAll() {
         for (VirtualPet pet : shelter) {
@@ -24,8 +23,8 @@ public class VirtualPetShelter {
     }
 
     void feedAll() {
-        for (VirtualPet Pet : shelter) {
-            Pet.feed();
+        for (VirtualPet pet : shelter) {
+            pet.feed();
         }
     }
 
@@ -35,24 +34,15 @@ public class VirtualPetShelter {
         }
 
     }
+    public void showAllPetStatus() {
+        for (VirtualPet pet : shelter) {
+            pet.greeting();
+        }
 
-
+    }
     public void admitPet(VirtualPet Animals) {
         shelter.add(Animals);
 
-
-    }
-
-    public void adoptPet() {
-        for (VirtualPet pet : shelter) {
-            pet.getName();
-        }
-    }
-
-    public void PetStatus(VirtualPet Animals) {
-        for (VirtualPet pet : shelter) {
-            Animals.showStatus();
-        }
 
     }
 
@@ -115,5 +105,19 @@ public class VirtualPetShelter {
         }
 
 
+    }
+
+    public VirtualPet findPetByName(String name) {
+        for (VirtualPet pet : shelter) {
+            if (pet.getName().equalsIgnoreCase(name)) {
+                return pet;
+            }
+
+        }
+        return null;
+    }
+
+    public void adoptPet(String petName) {
+        shelter.remove((findPetByName(petName)));
     }
 }

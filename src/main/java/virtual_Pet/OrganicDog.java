@@ -8,14 +8,14 @@ public class OrganicDog extends OrganicPet implements Walking {
     }
 
     @Override
-    public void walk(){
-        int boredomLevel = 0;
+    public void walk() {
         boredomLevel--;
         cleanlinessLevel++;
     }
 
     @Override
-    public void showStatus() {
-        System.out.println("my name" + getName() + "hungerLevel" + "boredomLevel" + "thirst" + "thirstLevel" + "cleanliness" + "cleanlinessLevel");
+    public void greeting() {
+        System.out.println("my name is" + getName() + "i am a Organic dog" + "my hunger level is" + hungerLevel + "My thirst level is " + thirstLevel + "My boredom level is" + boredomLevel +  "my Cage Cleanliness is" + cleanlinessLevel);
+
     }
 }

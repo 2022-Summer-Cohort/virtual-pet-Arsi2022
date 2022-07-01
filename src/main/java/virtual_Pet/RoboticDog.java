@@ -9,6 +9,14 @@ public class RoboticDog extends RoboticPet implements Walking {
 
     @Override
     public void walk() {
+        boredomLevel--;
+        maintenanceLevel++;
+        oilLevel++;
+    }
+
+    @Override
+    public void greeting() {
+        System.out.println("my name is " + getName() + " i am a Robotic dog" + " my Oil level is" + oilLevel + " My maintenance level is " + maintenanceLevel);
 
     }
 }

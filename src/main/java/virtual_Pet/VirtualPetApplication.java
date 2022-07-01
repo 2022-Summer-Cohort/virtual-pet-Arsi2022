@@ -7,22 +7,63 @@ public class VirtualPetApplication {
 
     public static void main(String[] args) {
         //Interact with a virtual_Pet.VirtualPet object in this method
-        VirtualPet journey = new RoboticCat("Journey",10,10,10,10,10);
+        VirtualPet shelter1 = new RoboticCat("journey", 10, 10, 10, 10, 10);
+        VirtualPet Henry = new RoboticDog("Henry", 6, 6, 6, 10, 10);
+        VirtualPet Alein = new RoboticCat("Alein", 6, 6, 6, 10, 10);
+        VirtualPet Brandon = new OrganicDog("Brandon", 6, 6, 6, 10);
+        VirtualPet Nguyen = new OrganicCat("Nguyen", 6, 6, 6, 10);
         VirtualPetShelter shelter = new VirtualPetShelter();
+        shelter.admitPet(Henry);
+        shelter.admitPet(Alein);
+        shelter.admitPet(Brandon);
+        shelter.admitPet(Nguyen);
+        shelter.admitPet(shelter1);
+        
         Scanner input = new Scanner(System.in);
-        while (journey.isAlive()) {
-            journey.showStatus();
+        while (true) {
+            shelter.showAllPetStatus();
+//
+
             System.out.println("hit selection:feed| play| water| quit| Clean cage| clean little box| oil robots| maintain robotic");
             String userChoice = input.nextLine();
             switch (userChoice.toLowerCase()) {
                 case "feed":
-                    journey.feed();
+                    shelter.feedAll();
                     break;
                 case "water":
-                    journey.water();
+                    shelter.waterAll();
                     break;
                 case "play":
-                    journey.play();
+                    shelter.playAll();
+                    break;
+                case "admit":
+                    System.out.println("Enter pet name.");
+                    String petName = input.nextLine();
+
+                    System.out.println("Is it robotic or organic?");
+                    String type = input.nextLine();
+                    System.out.println("Is it a dog or cat?");
+                    String dogorCat = input.nextLine();
+                    if (type.equalsIgnoreCase("robotic") && dogorCat.equalsIgnoreCase("dog")) {
+
+                        shelter.admitPet(new RoboticDog(petName, 10, 10, 10, 10, 10));
+                    } else if (type.equalsIgnoreCase("robotic") && dogorCat.equalsIgnoreCase("cat")) {
+
+                        shelter.admitPet(new RoboticCat(petName, 10, 10, 10, 10, 10 ));
+                    } else if (type.equalsIgnoreCase("organic") && dogorCat.equalsIgnoreCase("dog")) {
+
+
+                        shelter.admitPet(new OrganicDog(petName, 10, 10, 10, 10));
+                    } else if (type.equalsIgnoreCase("organic") && dogorCat.equalsIgnoreCase("cat")) {
+
+
+                        shelter.admitPet(new OrganicCat(petName, 10, 10, 10, 10));
+                    }
+                    break;
+                case "adopt":
+                    System.out.println("Which pet would you want to adopt");
+                    String adaptPetName = input.nextLine();
+                    shelter.adoptPet(adaptPetName);
                     break;
                 case "walk":
                     shelter.walk();
@@ -38,16 +79,14 @@ public class VirtualPetApplication {
                     break;
                 case "maintain robotic":
                     shelter.maintainRobot();
-            }       break;
+                    break;
+
+            } shelter.tick();
+            
+
         }
-
     }
-
 }
-
-
-
-
 
 
 
